@@ -5,4 +5,8 @@ const user = {
     'city of residence': 'Moscow'
 }
 
-console.log(typeof user.isAdmin);
+
+user.age = 30;
+delete user['city of residence'];
+
+console.log(user);

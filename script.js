@@ -1,24 +1,25 @@
-const country = {
-    'Лима': 'Перу',
-    'Джакарта': 'Индонезия',
-    'Анкара': 'Турция',
-    'Париж': 'Франция',
-    'Канберра': 'Австралия'
-};
+function getRectangleArea() {
+    return this.width * this.height; 
+}
 
-for (let capital in country) { // здесь country - это наш объект, в котором
-    // перебираем свойства, capital - объявили новую переменную, имя может быть любым
-    // на каждой итерации capital получает наименования ключа, т.е. сначала будет
-    // capital = 'Лима', далее capital = 'Джакарта', после capital = 'Анкара' и т.д.
-    /* capital — это ключ в объекте country */
-        console.log(`${capital}, является столицей ${country[capital]}`);
-            /* с помощью конструкции country[capital] мы получаем значение объекта
-             по его ключу */
-    }
+function getRectanglePerimeter () {
+    return (this.width * this.height) ** 2
+}
+const square1 = {
+    width: 1,
+    height: 2,
+    getRectangleArea: getRectangleArea,
+    getRectanglePerimeter: getRectanglePerimeter,
+}
 
-    const dog = {
-        name: 'Шарик',
-        breed: 'корги',
-        weight: 6,
-        age: 2
-    }
+const square2 = {
+    width: 90,
+    height: 190,
+    getRectangleArea: getRectangleArea,
+    getRectanglePerimeter: getRectanglePerimeter,
+}
+
+console.log(square1.getRectangleArea());
+console.log(square1.getRectanglePerimeter());
+console.log(square2.getRectangleArea());
+console.log(square2.getRectanglePerimeter());

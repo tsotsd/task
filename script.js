@@ -1,10 +1,24 @@
-while (true) {
-    const msg = prompt('Введите text', 'text')
-    if (msg === 'continue') {
-        continue
+const country = {
+    'Лима': 'Перу',
+    'Джакарта': 'Индонезия',
+    'Анкара': 'Турция',
+    'Париж': 'Франция',
+    'Канберра': 'Австралия'
+};
+
+for (let capital in country) { // здесь country - это наш объект, в котором
+    // перебираем свойства, capital - объявили новую переменную, имя может быть любым
+    // на каждой итерации capital получает наименования ключа, т.е. сначала будет
+    // capital = 'Лима', далее capital = 'Джакарта', после capital = 'Анкара' и т.д.
+    /* capital — это ключ в объекте country */
+        console.log(`${capital}, является столицей ${country[capital]}`);
+            /* с помощью конструкции country[capital] мы получаем значение объекта
+             по его ключу */
     }
-    console.log(msg);
-    if (msg === 'break') {
-        break;
-    } 
-}
+
+    const dog = {
+        name: 'Шарик',
+        breed: 'корги',
+        weight: 6,
+        age: 2
+    }

@@ -1,34 +1,20 @@
-for( let firstFriday = 5; firstFriday <= 31; firstFriday += 7) {
-    console.log(`Сегодня пятница, ${firstFriday} - e число. Необходимо подготовить отчет`);
-}
-
-
-// let n = 1000;
-// let num = 0;
-
-// while (n > 50) {
-//     n = n / 2;
-//     num++;
-//     console.log(n, num);
-// }
-
-// const obj = {
-//     "Коля": '200',
-//     "Вася": '300',
-//     "Петя": '400'
-// }
-// for (const key in obj) {
-//     console.log(`${key} - зарплата ${obj[key]} долларов`);
-// }
+// const arr = [3, 5, 6, 2, 9, 10];
+// const even = arr.filter(item => item % 2 == 0);
+// console.log(even);
 
 
 
-// for (let index = 7; index <= 22; index++) {
-//     console.log(index);
-// }
+// let line = 'a=b=c=d=e=f';
+// const arr = line.split('=');
+// console.log(arr);
+// // arr.forEach((element, index, array) => {
+// //     if (element == 'c') {
+// //         console.log(`${index}:${element}, ${array}` );
+// //     }
+// // });
 
-// let i = 0;
-// do {
-//     console.log('Hi');
-//     i++;
-// } while (i < 2);
+// console.log(arr.pop());
+// console.log(arr);
+// let array = arr.shift();
+// console.log( typeof array);
+// console.log(arr);

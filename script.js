@@ -1,4 +1,4 @@
-for( lt firstFriday = 5; firstFriday <= 31; firstFriday + 7) {
+for( let firstFriday = 5; firstFriday <= 31; firstFriday += 7) {
     console.log(`Сегодня пятница, ${firstFriday} - e число. Необходимо подготовить отчет`);
 }
 

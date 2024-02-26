@@ -1,15 +1,108 @@
-let a = ['a', 'b', 'c'];
-let b = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9], [10],
-];
 
-for (let i = 0; i < b.length; i++) {
-    for (let j = 0; j < b[i].length; j++) {
-        console.log(b[i][j]);
-    }
-}
+
+// let arr = [9, 8, 7, 6, 5];
+// function mystery(arr) {
+// let answer = +prompt('Угадайте число спрятанное в массиве');
+
+// for (let index = 0; index < arr.length; index++) {
+// 	if (arr[index] === answer) {
+// 		return alert('Угадал');
+// 		} 
+// 	}
+// 		alert('Не угадал');
+// }	
+// mystery(arr);
+
+// const array = [9, 8, 7, 6, 5];
+
+// function guess(array) {
+// let userGuess = +prompt('Guess the number');
+
+// for (let i = 0; i < array.length; i++) {
+//    if (array[i] === userGuess) {
+//      return alert('guessed right');
+//    } 
+// }
+//     alert('did not guess');
+// }
+
+//    guess(array);
+
+// array.forEach(element => {
+//     userGuess == element ? alert('guessed right') : alert('did not guess')
+// });
+
+// const array = [9, 8, 7, 'a', 6, 5];
+// array.sort();
+// console.log(array.pop());
+// console.log(array);
+
+
+// const array = [1, 1, 1];
+// array.push(2,2,2)
+// console.log(array);
+
+// const arr = [[1, 1, 1], [1, 1, 1], [1, 1, 1]];
+// console.log(arr);
+
+// const array = [];
+// for (let i = 0; i < 3; i++) {
+//     array[i] = [];   
+//     for (let j = 0; j < 3; j++) {
+//         // array[i].push(1);
+//         array[i][j] = 1;
+//     }
+// }
+// console.log(array);
+
+// for (let i = 0; i < 3; i++) {
+//     array.push(2);
+//     for (let j = 0; j < 3; j++) {
+//         array.push(1);
+//         console.log(array);  
+//     }
+// }
+
+// const array = [1, 5, 4, 10, 0, 3];
+// console.log(array.join(' '));
+
+
+
+// const array = [1, 5, 4, 10, 0, 3];
+// console.log(array.indexOf(4));
+
+
+// const array = [1, 5, 4, 10, 0, 3];
+
+// array.forEach((element, index) => {
+//     if (element == 4) {
+//         console.log(index);
+//     }
+// });
+
+
+// const array = [1, 5, 4, 10, 0, 3];
+// for (let i = 0; i < array.length; i++) {
+//     console.log(array[i]);
+//     if (array[i] == 10) break
+// }
+
+
+
+
+
+// let a = ['a', 'b', 'c'];
+// let b = [
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9], [10],
+// ];
+
+// for (let i = 0; i < b.length; i++) {
+//     for (let j = 0; j < b[i].length; j++) {
+//         console.log(b[i][j]);
+//     }
+// }
 
 // for (const item of b) {
 //     for (const el of item) {

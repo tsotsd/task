@@ -1,18 +1,103 @@
+// const array = [];
+// for (let i = 0; i < 6; i++) {
+//     array.push(Math.round(Math.random(10) * 10))
+// }
+// console.log(array);
+// let total = 0;
+// for (let i = 0; i < array.length; i++) {
+//     total = Math.round(total + array[i] / array.length) 
+// }
+// console.log(total);
 
 
-// let arr = [9, 8, 7, 6, 5];
-// function mystery(arr) {
+
+// const array = [];
+// for (let i = 0; i < 10; i++) {
+//   array.push(Math.round(Math.random(10) * 10));
+// }
+// console.log(array);
+// const arr = [];
+// for (let i = 0; i < array.length; i++) {
+//     if (array[i] % 2 == 0) {
+//         arr.push(array[i]);
+//     }
+// }
+// console.log(arr);
+
+
+
+// function filterPositive(array) {
+//     console.log(array.filter(item => item < 0));
+//   }
+
+//   filterPositive([-1, 0, 5, -10, 56]); // => [-1, -10]
+//   filterPositive([-25, 25, 0, -1000, -2]); // => [-25, -1000, -2]
+
+// // function getLengthWords(arr) {
+//     return console.log(arr.map(word => word.length));
+// }
+
+// getLengthWords(['слово', '', 'слог', 'длинное предложение', 'буква']);// [5, 0, 4, 19, 5]
+
+// const array = ['слово', '', 'слог', 'длинное предложение', 'буква'];
+// for (let i = 0; i < array.length; i++) {
+//     console.log(array[i].length);
+// }
+// const getLengthWords = (array) => {
+//     let item;
+//     for (let i = 0; i < array.length; i++) {
+//         let item = array[i].length
+//         //console.log(typeof item);
+//     }
+//     item.split();
+// }
+
+// getLengthWords(['слово', '', 'слог', 'длинное предложение', 'буква']);// [5, 0, 4, 19, 5]
+
+// const array = [9, 8, 7, 6, 5];
+// const square = array.map(item => item ** 2);
+// console.log(square);
+
+// const array = [9, 8, 7, 6, 5];
+// sum = 0;
+// for (let i = 0; i < array.length; i++) {
+//     sum += array[i];
+//     console.log(sum);
+// }
+
+// const arr2 = [[1, 2, 3], [4, 5, 6]];
+// console.log(arr2.flat());
+
+// const array = [
+//     [1, 2, 3],
+//     [4, 5, 6],
+// ];
+
+// let newArray = array.join().split();
+
+// console.log(newArray);
+
+// let str = 'abcdef';
+// str = str.split('').reverse().join('');
+// console.log(str);
+
+// let array = [9, 8, 7, 6, 5];
 // let answer = +prompt('Угадайте число спрятанное в массиве');
 
-// for (let index = 0; index < arr.length; index++) {
-// 	if (arr[index] === answer) {
-// 		return alert('Угадал');
-// 		} 
-// 	}
-// 		alert('Не угадал');
-// }	
-// mystery(arr);
+// let search = array.includes(answer);
+// console.log(search);
 
+// if (search) {
+//     alert('yes');
+// } else {
+//     alert('no');
+// }
+
+// if (findArray) {
+//     alert('yes');
+// } else {
+//     alert('no');
+// }
 // const array = [9, 8, 7, 6, 5];
 
 // function guess(array) {
@@ -21,7 +106,7 @@
 // for (let i = 0; i < array.length; i++) {
 //    if (array[i] === userGuess) {
 //      return alert('guessed right');
-//    } 
+//    }
 // }
 //     alert('did not guess');
 // }
@@ -37,7 +122,6 @@
 // console.log(array.pop());
 // console.log(array);
 
-
 // const array = [1, 1, 1];
 // array.push(2,2,2)
 // console.log(array);
@@ -47,7 +131,7 @@
 
 // const array = [];
 // for (let i = 0; i < 3; i++) {
-//     array[i] = [];   
+//     array[i] = [];
 //     for (let j = 0; j < 3; j++) {
 //         // array[i].push(1);
 //         array[i][j] = 1;
@@ -59,18 +143,15 @@
 //     array.push(2);
 //     for (let j = 0; j < 3; j++) {
 //         array.push(1);
-//         console.log(array);  
+//         console.log(array);
 //     }
 // }
 
 // const array = [1, 5, 4, 10, 0, 3];
 // console.log(array.join(' '));
 
-
-
 // const array = [1, 5, 4, 10, 0, 3];
 // console.log(array.indexOf(4));
-
 
 // const array = [1, 5, 4, 10, 0, 3];
 
@@ -80,16 +161,11 @@
 //     }
 // });
 
-
 // const array = [1, 5, 4, 10, 0, 3];
 // for (let i = 0; i < array.length; i++) {
 //     console.log(array[i]);
 //     if (array[i] == 10) break
 // }
-
-
-
-
 
 // let a = ['a', 'b', 'c'];
 // let b = [
@@ -130,8 +206,6 @@
 //     }
 // }
 
-
- 
 // const newspaper = {
 // 	sports : {
 //         title: 'ARod Hits Home Run',
@@ -144,7 +218,7 @@
 //         movies : {
 //         title: 'Superman Is A Flop',
 // 	    writes: ['Rogert Ebert', 'Andrew Sarris', 'Wesley Morris'],
-//     },        
+//     },
 // }
 
 // console.log(newspaper.length);
@@ -159,12 +233,9 @@
 
 // console.log(book[1].pageCount);
 
-
 // const arr = [3, 5, 6, 2, 9, 10];
 // const even = arr.filter(item => item % 2 == 0);
 // console.log(even);
-
-
 
 // let line = 'a=b=c=d=e=f';
 // const arr = line.split('=');

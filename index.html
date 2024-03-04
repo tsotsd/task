@@ -1,11 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script src="script.js"></script>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Урок "Управление html содержимым из js"</title>
+  </head>
+
+  <body>
+    <h1>Любимые цвета студентов</h1>
+    <ul id="list">
+      <li>Глеб, любимый цвет <span style="color: #ff2600;"> #ff2600</span></li>
+      <li>Иван, любимый цвет <span style="color: #00f900;"> #00f900</span></li>
+      <li>Люси, любимый цвет <span style="color: #0432ff;"> #0432ff</span></li>
+    </ul>
+
+    <div>
+      <h3>Форма добавления</h3>
+      Имя:
+      <input type="text" />
+      <br /><br />
+      Цвет:
+      <input type="color" />
+      <br /><br />
+      <button id="add-button">Добавить</button>
+    </div>
+    <br />
+    <div>
+      <h3>Форма удаления</h3>
+      <button>Удалить <span style="color: #ff2600;">#ff2600</span></button>
+    </div>
+  </body>
+  <script>
+    const buttonElement = document.getElementById("add-button");
+
+    buttonElement.addEventListener("click", () => {
+      alert("Меня нажали");
+    });
+  </script>
 </html>

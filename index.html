@@ -5,7 +5,7 @@
   </head>
 
   <body>
-    <h1>Любимые цвета студентов</h1>
+    <h1 id="heading">Любимые цвета студентов</h1>
     <ul id="list">
       <li>Глеб, любимый цвет <span style="color: #ff2600;"> #ff2600</span></li>
       <li>Иван, любимый цвет <span style="color: #00f900;"> #00f900</span></li>
@@ -21,6 +21,7 @@
       <input type="color" />
       <br /><br />
       <button id="add-button">Добавить</button>
+      <button id="change-button">Изменить</button>
     </div>
     <br />
     <div>
@@ -30,6 +31,17 @@
   </body>
   <script>
     const buttonElement = document.getElementById("add-button");
+    const changeHeadingElement = document.getElementById("change-button");
+    const headingElement = document.getElementById("heading");
+
+    changeHeadingElement.addEventListener('click', () => {
+        const oldHeading = headingElement.innerHTML;
+        if (oldHeading === 'Любимые цвета студентов') {
+            headingElement.innerHTML = 'Самые любимые цвета студентов';
+        } else {
+            headingElement.innerHTML = 'Любимые цвета студентов'
+        }
+     })
 
     buttonElement.addEventListener("click", () => {
       alert("Меня нажали");

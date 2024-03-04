@@ -1,88 +1,71 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Урок "Управление html содержимым из js"</title>
+    <title>Проект "Комменты"</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <h1 id="heading">Любимые цвета студентов</h1>
-    <ul id="list">
-      <li>Глеб, любимый цвет <span style="color: #ff2600;"> #ff2600</span></li>
-      <li>Иван, любимый цвет <span style="color: #00f900;"> #00f900</span></li>
-      <li>Люси, любимый цвет <span style="color: #0432ff;"> #0432ff</span></li>
-    </ul>
-
-    <div>
-      <h3>Форма добавления</h3>
-      Имя:
-      <input type="text" id="name-input" />
-      <br /><br />
-      Цвет:
-      <input type="color" id="color-input" />
-      <br /><br />
-      <button id="add-button">Добавить</button>
-      <button id="change-heading">Изменить цвет заголовка</button>
-
-    </div>
-    <br />
-    <div>
-      <h3>Форма удаления</h3>
-      <button>Удалить <span style="color: #ff2600;">#ff2600</span></button>
+    <div class="container">
+      <ul class="comments">
+        <li class="comment">
+          <div class="comment-header">
+            <div>Глеб Фокин</div>
+            <div>12.02.22 12:18</div>
+          </div>
+          <div class="comment-body">
+            <div class="comment-text">
+              Это будет первый комментарий на этой странице
+            </div>
+          </div>
+          <div class="comment-footer">
+            <div class="likes">
+              <span class="likes-counter">3</span>
+              <button class="like-button"></button>
+            </div>
+          </div>
+        </li>
+        <li class="comment">
+          <div class="comment-header">
+            <div>Варвара Н.</div>
+            <div>13.02.22 19:22</div>
+          </div>
+          <div class="comment-body">
+            <div class="comment-text">
+              Мне нравится как оформлена эта страница! ❤
+            </div>
+          </div>
+          <div class="comment-footer">
+            <div class="likes">
+              <span class="likes-counter">75</span>
+              <button class="like-button -active-like"></button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="add-form">
+        <input
+          type="text"
+          class="add-form-name"
+          placeholder="Введите ваше имя"
+        />
+        <textarea
+          type="textarea"
+          class="add-form-text"
+          placeholder="Введите ваш коментарий"
+          rows="4"
+        ></textarea>
+        <div class="add-form-row">
+          <button class="add-form-button">Написать</button>
+        </div>
+      </div>
     </div>
   </body>
-  <style>
-    .error {
-      background-color: red;
-    }
-    .heading-color {
-      color: red;  
-    }
-  </style>
+
   <script>
-    // 1. Dom дерево
-    // 2. Поиск элментов
-    const buttonElement = document.getElementById("add-button");
-    const listElement = document.getElementById("list");
-    const nameInputElement = document.getElementById("name-input");
-    const colorInputElement = document.getElementById("color-input");
-    
-    const changeColorHeading = document.getElementById("change-heading");
-    const headingElement = document.getElementById('heading')
-
-
-
-    changeColorHeading.addEventListener('click', () => {
-        headingElement.classList.toggle('heading-color');
-        
-
-        // if (headingElement.classList.contains('heading-color')) {
-        //     headingElement.classList.remove('heading-color');
-        // }   else {
-        //     headingElement.classList.add('heading-color');
-        // }
-           
-    })
-
-    // 3. Добавить обработчик клика
-    buttonElement.addEventListener("click", () => {
-      // 4. Добавляет и убирает классы с элементов
-      nameInputElement.classList.remove("error");
-
-      // 6. Читаем значение аттрибутов html элементов
-      if (nameInputElement.value === "") {
-        nameInputElement.classList.add("error");
-        return;
-      }
-
-      // 5. Управление внутренним html содержимым
-      const oldListHtml = listElement.innerHTML;
-      listElement.innerHTML =
-        oldListHtml +
-        `<li>
-          ${nameInputElement.value}, любимый цвет <span style="color: ${colorInputElement.value}"> ${colorInputElement.value}</span>
-        </li>`;
-
-      nameInputElement.value = "";
-    });
+    "use strict";
+    // Код писать здесь
+    console.log("It works!");
   </script>
 </html>

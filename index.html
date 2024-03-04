@@ -5,7 +5,7 @@
   </head>
 
   <body>
-    <h1 id="heading" style="color: black;">Любимые цвета студентов</h1>
+    <h1 id="heading">Любимые цвета студентов</h1>
     <ul id="list">
       <li>Глеб, любимый цвет <span style="color: #ff2600;"> #ff2600</span></li>
       <li>Иван, любимый цвет <span style="color: #00f900;"> #00f900</span></li>
@@ -34,6 +34,9 @@
     .error {
       background-color: red;
     }
+    .heading-color {
+      color: red;  
+    }
   </style>
   <script>
     // 1. Dom дерево
@@ -46,16 +49,18 @@
     const changeColorHeading = document.getElementById("change-heading");
     const headingElement = document.getElementById('heading')
 
-    console.log(headingElement.style);
+
 
     changeColorHeading.addEventListener('click', () => {
+        headingElement.classList.toggle('heading-color');
         
-        if (headingElement.style.color == 'black') {
-            headingElement.style.color = 'red'
-        } else {
-            headingElement.style.color = 'black'
-        }
-      
+
+        // if (headingElement.classList.contains('heading-color')) {
+        //     headingElement.classList.remove('heading-color');
+        // }   else {
+        //     headingElement.classList.add('heading-color');
+        // }
+           
     })
 
     // 3. Добавить обработчик клика

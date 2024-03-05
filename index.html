@@ -90,11 +90,12 @@
       minute = '0' + minute;
     }
 
-    let dateHours = todayDate + '.' + todayMonth + '.' + myDate.getFullYear() + ' ' + hour + ':' + minute;
+    let dateHours = todayDate + '.' + todayMonth + '.' + myDate.getFullYear().toString().substr(-2) + ' ' + hour + ':' + minute;
     console.log(dateHours);
     console.log(buttonElement.disabled);
 
-
+    const currentDate = new Date().toLocaleDateString('default', {day: '2-digit', month: '2-digit', year: '2-digit'}) + " "+ new Date().toLocaleTimeString().slice(0, -3);
+    console.log(currentDate);
 
       buttonElement.addEventListener('click', () => {
       // nameInputElement.classList.remove('error');

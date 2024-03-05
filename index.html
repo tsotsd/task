@@ -92,18 +92,26 @@
 
     let dateHours = todayDate + '.' + todayMonth + '.' + myDate.getFullYear() + ' ' + hour + ':' + minute;
     console.log(dateHours);
+    console.log(buttonElement.disabled);
 
-    buttonElement.addEventListener('click', () => {
-      nameInputElement.classList.remove('error');
-      commentTextareaElement.classList.remove('error');
-      if (nameInputElement.value === '') {
-        nameInputElement.classList.add('error'); 
-        return;
+
+
+      buttonElement.addEventListener('click', () => {
+      // nameInputElement.classList.remove('error');
+      // commentTextareaElement.classList.remove('error');
+
+      console.log(buttonElement.removeAttribute);
+
+      if (nameInputElement.value === '' || commentTextareaElement.value ==='') {
+        buttonElement.setAttribute('disabled', true);
+      } else {
+        buttonElement.removeAttribute('disabled');
       }
-      if (commentTextareaElement.value === '') {
-        commentTextareaElement.classList.add('error');
-         return; 
-      }
+
+      // if (commentTextareaElement.value === '') {
+      //   commentTextareaElement.classList.add('error');
+      //    return; 
+      // }
 
       const oldListElement = listElement.innerHTML;
       listElement.innerHTML = oldListElement + ` <li class="comment">
@@ -125,6 +133,28 @@
         </li>`
     });
     
+    document.addEventListener('keyup', (event) => {
+        if (event.code === 'Enter') {
+          const oldListElement = listElement.innerHTML;
+      listElement.innerHTML = oldListElement + ` <li class="comment">
+          <div class="comment-header">
+            <div>${nameInputElement.value}</div>
+            <div>${dateHours}</div>
+          </div>
+          <div class="comment-body">
+            <div class="comment-text">
+              ${commentTextareaElement.value}
+            </div>
+          </div>
+          <div class="comment-footer">
+            <div class="likes">
+              <span class="likes-counter">0</span>
+              <button class="like-button"></button>
+            </div>
+          </div>
+        </li>`
+        }
+      })
 
     console.log("It works!");
   </script>

@@ -71,7 +71,7 @@
     const nameInputElement = document.getElementById('name-input');
     const commentTextareaElement = document.getElementById('comment-textarea');
     let myDate = new Date();
-    console.log(myDate);
+
     let todayDate = myDate.getDate();
     let todayMonth = myDate.getMonth() + 1;
     if (todayDate < 10) {
@@ -92,9 +92,19 @@
 
     let dateHours = todayDate + '.' + todayMonth + '.' + myDate.getFullYear() + ' ' + hour + ':' + minute;
     console.log(dateHours);
-    //console.log(nameInputElement.type);
-    
+
     buttonElement.addEventListener('click', () => {
+      nameInputElement.classList.remove('error');
+      commentTextareaElement.classList.remove('error');
+      if (nameInputElement.value === '') {
+        nameInputElement.classList.add('error'); 
+        return;
+      }
+      if (commentTextareaElement.value === '') {
+        commentTextareaElement.classList.add('error');
+         return; 
+      }
+
       const oldListElement = listElement.innerHTML;
       listElement.innerHTML = oldListElement + ` <li class="comment">
           <div class="comment-header">

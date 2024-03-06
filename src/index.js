@@ -3,20 +3,46 @@ const listElement = document.getElementById("list");
 const nameInputElement = document.getElementById("name-input");
 const colorInputElement = document.getElementById("color-input");
 
-// const bodyElements = document.querySelectorAll('body');
+const students = [
+  {
+    name: "Глеб",
+    color: "#ff2600",
+  },
+  {
+    name: "Иван",
+    color: "#00f900",
+  },
+  {
+    name: "Люси",
+    color: "#0432ff",
+  },
+];
 
-// for (const bodyElement of bodyElements) {
-//   bodyElement.addEventListener('click', () => {
-//     bodyElement.style.backgroundColor = 'red'
-//   })
+const renderStudents = () => {
+  const studentsHtml = students
+    .map((student) => {
+      return `<li class="student" data-color="${student.color}">
+    <p class="student-name">
+      ${student.name}, любимый цвет
+      <span style="color: ${student.color}"> ${student.color}</span>
+    </p>
+    <button class="delete-button" data-name="${student.name}">Удалить</button>
+  </li>`;
+    })
+    .join("");
+  listElement.innerHTML = studentsHtml;
 
-// }
+  initEventListners();
+  initEventListnersHi();
+};
+
 const initEventListnersHi = () => {
-  const buttonsElementsHis = document.querySelectorAll(".hi");
+  const buttonsElementsHis = document.querySelectorAll(".delete-button");
 
   for (const buttonElementHi of buttonsElementsHis) {
     buttonElementHi.addEventListener("click", () => {
-      alert(`Hi ${buttonElementHi.dataset.name}`);
+      console.log("deleting..");
+      console.log(listElement.innerHTML);
     });
   }
 };
@@ -30,9 +56,7 @@ const initEventListners = () => {
     });
   }
 };
-
-initEventListners();
-initEventListnersHi();
+renderStudents();
 
 buttonElement.addEventListener("click", () => {
   nameInputElement.classList.remove("input-error");
@@ -42,18 +66,13 @@ buttonElement.addEventListener("click", () => {
     return;
   }
 
-  listElement.innerHTML =
-    listElement.innerHTML +
-    `<li class="student" data-color="${colorInputElement.value}">
-        <p class="student-name">
-          ${nameInputElement.value}, любимый цвет
-          <span style="color: ${colorInputElement.value}"> ${colorInputElement.value}</span>
-        </p>
-        <button class="hi" data-name="${nameInputElement.value}">Приветствовать</button>
-      </li>`;
+  students.push({
+    name: nameInputElement.value,
+    color: colorInputElement.value,
+  });
 
-  initEventListners();
-  initEventListnersHi();
+  renderStudents();
+
 
   nameInputElement.value = "";
 });

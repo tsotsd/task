@@ -7,20 +7,35 @@ const students = [
   {
     name: "Глеб",
     color: "#ff2600",
+    isMale: true,
   },
   {
     name: "Иван",
     color: "#00f900",
+    isMale: true,
   },
   {
     name: "Люси",
     color: "#0432ff",
+    isMale: false,
   },
 ];
+
 
 const renderStudents = () => {
   const studentsHtml = students
     .map((student) => {
+    if (student.isMale === true) {
+      return `<li class="student" data-color="${student.color}">
+    <p class="student-name">
+      <span style="color: #FF8800"> ${student.name}, </span>
+      <span>любимый цвет</span>
+      <span style="color: ${student.color}"> ${student.color}</span>
+        
+      </p>
+    <button class="delete-button" data-name="${student.name}">Удалить</button>
+  </li>`;
+    } else {
       return `<li class="student" data-color="${student.color}">
     <p class="student-name">
       ${student.name}, любимый цвет
@@ -28,8 +43,10 @@ const renderStudents = () => {
     </p>
     <button class="delete-button" data-name="${student.name}">Удалить</button>
   </li>`;
-    })
-    .join("");
+    }
+    }).join("");
+ 
+
   listElement.innerHTML = studentsHtml;
 
   initEventListners();

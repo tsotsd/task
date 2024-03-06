@@ -25,25 +25,13 @@ const students = [
 const renderStudents = () => {
   const studentsHtml = students
     .map((student) => {
-    if (student.isMale === true) {
       return `<li class="student" data-color="${student.color}">
-    <p class="student-name">
-      <span style="color: #FF8800"> ${student.name}, </span>
-      <span>любимый цвет</span>
-      <span style="color: ${student.color}"> ${student.color}</span>
-        
-      </p>
-    <button class="delete-button" data-name="${student.name}">Удалить</button>
-  </li>`;
-    } else {
-      return `<li class="student" data-color="${student.color}">
-    <p class="student-name">
-      ${student.name}, любимый цвет
-      <span style="color: ${student.color}"> ${student.color}</span>
+    <p class="student-name" ${student.isMale ? `style="color: #FF8800"` : ""}>
+    ${student.name}, любимый цвет
+    <span style="color: ${student.color}"> ${student.color}</span>
     </p>
     <button class="delete-button" data-name="${student.name}">Удалить</button>
   </li>`;
-    }
     }).join("");
  
 

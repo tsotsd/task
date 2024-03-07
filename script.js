@@ -10,16 +10,18 @@ const comments = [
     name: 'Глеб Фокин',
     comment: 'Это будет первый комментарий на этой странице',
     like: 3,
-  }
+  },
   {
     name: 'Варвара Н.',
     comment: 'Мне нравится как оформлена эта страница! ❤',
     like: 75,
-  }
+  },
 ];
 
 
-
+const renderComments = () => {
+  
+}
 
 let myDate = new Date();
 

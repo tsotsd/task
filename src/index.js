@@ -21,13 +21,16 @@ const students = [
   },
 ];
 
-
+//<p class="student-name" ${student.isMale ? `style="color: #FF8800"` : ""}>
+//<span style="color: #FF8800">любимый цвет</span>
+// <span style="${student.isLover ? "color: ${student.color}" : "color: #FF8000"}">${student.name}</span>, любимый цвет
 const renderStudents = () => {
   const studentsHtml = students
     .map((student) => {
       return `<li class="student" data-color="${student.color}">
-    <p class="student-name" ${student.isMale ? `style="color: #FF8800"` : ""}>
-    ${student.name}, любимый цвет
+    <p class="student-name">
+    <span ${student.isMale ? `style="color: #FF8800"` : ""}>${student.name},</span> 
+    <span>любимый цвет</span>
     <span style="color: ${student.color}"> ${student.color}</span>
     </p>
     <button class="delete-button" data-name="${student.name}">Удалить</button>

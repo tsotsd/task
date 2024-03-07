@@ -3,6 +3,8 @@ const listElement = document.getElementById("list");
 const nameInputElement = document.getElementById("name-input");
 const colorInputElement = document.getElementById("color-input");
 
+
+
 const students = [
   {
     name: "Глеб",
@@ -21,39 +23,58 @@ const students = [
   },
 ];
 
-//<p class="student-name" ${student.isMale ? `style="color: #FF8800"` : ""}>
-//<span style="color: #FF8800">любимый цвет</span>
-// <span style="${student.isLover ? "color: ${student.color}" : "color: #FF8000"}">${student.name}</span>, любимый цвет
+
 const renderStudents = () => {
   const studentsHtml = students
-    .map((student) => {
+    .map((student, index) => {
       return `<li class="student" data-color="${student.color}">
     <p class="student-name">
     <span ${student.isMale ? `style="color: #FF8800"` : ""}>${student.name},</span> 
     <span>любимый цвет</span>
     <span style="color: ${student.color}"> ${student.color}</span>
     </p>
-    <button class="delete-button" data-name="${student.name}">Удалить</button>
-  </li>`;
+    <button data-index=${index} class="change-name">Стереть имя</button>
+    <button data-index="${index}" class="delete-button" data-name="${student.name}">Удалить</button>
+    </li>`;
     }).join("");
  
 
   listElement.innerHTML = studentsHtml;
 
   initEventListners();
-  initEventListnersHi();
+  initEventListnersDelete();
+  initEventListnersChangeName();
 };
 
-const initEventListnersHi = () => {
+
+
+ 
+const initEventListnersChangeName = () => {
+  const buttonElementChangeNames = document.querySelectorAll(".change-name");
+
+  for (const buttonElementChangeName of buttonElementChangeNames) {
+    buttonElementChangeName.addEventListener('click', () => {
+      const index = buttonElementChangeName.dataset.index;
+      students[index].name = 'Неизвестный студент' 
+      renderStudents()
+    })
+  }
+}
+
+const initEventListnersDelete = () => {
   const buttonsElementsHis = document.querySelectorAll(".delete-button");
+
 
   for (const buttonElementHi of buttonsElementsHis) {
     buttonElementHi.addEventListener("click", () => {
-      console.log("deleting..");
-      console.log(listElement.innerHTML);
+      const index = buttonElementHi.dataset.index;
+      students.splice(index, 1);
+      renderStudents();
     });
   }
 };
+
+
 
 const initEventListners = () => {
   const studentElements = document.querySelectorAll(".student");

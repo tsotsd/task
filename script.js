@@ -26,26 +26,8 @@ const renderComments = () => {
 
 let myDate = new Date();
 
-// let todayDate = myDate.getDate();
-// let todayMonth = myDate.getMonth() + 1;
-// if (todayDate < 10) {
-//   todayDate = '0' + todayDate;
-// }
-// if (todayMonth < 10) {
-//   todayMonth = '0' + todayMonth;
-// }
-// let hour = myDate.getHours();
-// let minute = myDate.getMinutes();
-
-// if (hour < 10) {
-//   hour = '0' + hour;
-// }
-// if (minute < 10) {
-//   minute = '0' + minute;
-// }
-
-let dateHours = todayDate + '.' + todayMonth + '.' + myDate.getFullYear().toString().substr(-2) + ' ' + hour + ':' + minute;
-console.log(dateHours);
+// let dateHours = todayDate + '.' + todayMonth + '.' + myDate.getFullYear().toString().substr(-2) + ' ' + hour + ':' + minute;
+// console.log(dateHours);
 console.log(buttonElement.disabled);
 
 const currentDate = new Date().toLocaleDateString('default', {day: '2-digit', month: '2-digit', year: '2-digit'}) + " "+ new Date().toLocaleTimeString().slice(0, -3);

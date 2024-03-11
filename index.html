@@ -41,26 +41,25 @@
     const students = [
       {
         name: "Глеб",
-        color: "#ff2600"
+        color: "#ff2600",
       },
       {
         name: "Иван",
-        color: "#00f900"
+        color: "#00f900",
       },
       {
         name: "Люси",
-        color: "#0432ff"
-      }
+        color: "#0432ff",
+      },
     ];
 
     const renderStudents = () => {
       const studentsHtml = students
         .map((student, index) => {
           return `
-          <li class="student">
+          <li class="student" data-color="${student.color}">
             <p class="student-name">
-              ${student.name}, любимый цвет
-              <span style="color: ${student.color}"> ${student.color}</span>
+              ${student.name}
             </p>
             <button data-index="${index}" class="button delete-button">Удалить</button>
           </li>`;
@@ -72,7 +71,9 @@
       const deleteButtons = document.querySelectorAll(".delete-button");
 
       for (const deleteButton of deleteButtons) {
-        deleteButton.addEventListener("click", () => {
+        deleteButton.addEventListener("click", (event) => {
+        console.log(event);   
+            event.stopPropagation();
           const index = deleteButton.dataset.index;
 
           students.splice(index, 1);
@@ -80,6 +81,15 @@
           renderStudents();
         });
       }
+      const studentsElements = document.querySelectorAll(".student");
+
+      for (const student of studentsElements) {
+        student.addEventListener("click", () => {
+          const color = student.dataset.color;
+          alert(`Любимый цвет: ${color}`);
+        });
+      };
+
     };
 
     renderStudents();
@@ -93,8 +103,10 @@
       }
 
       students.push({
-        name: nameInputElement.value,
-        color: colorInputElement.value
+        name: nameInputElement.value
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;'),
+        color: colorInputElement.value,
       });
 
       renderStudents();
@@ -103,3 +115,4 @@
     });
   </script>
 </html>
+

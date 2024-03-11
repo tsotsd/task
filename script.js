@@ -1,5 +1,6 @@
 "use strict";
 // Код писать здесь
+
 const buttonElement = document.getElementById('add-name-comment');
 const listElement = document.getElementById('list');
 const nameInputElement = document.getElementById('name-input');
@@ -25,23 +26,23 @@ const renderComments = () => {
 
 let myDate = new Date();
 
-let todayDate = myDate.getDate();
-let todayMonth = myDate.getMonth() + 1;
-if (todayDate < 10) {
-  todayDate = '0' + todayDate;
-}
-if (todayMonth < 10) {
-  todayMonth = '0' + todayMonth;
-}
-let hour = myDate.getHours();
-let minute = myDate.getMinutes();
+// let todayDate = myDate.getDate();
+// let todayMonth = myDate.getMonth() + 1;
+// if (todayDate < 10) {
+//   todayDate = '0' + todayDate;
+// }
+// if (todayMonth < 10) {
+//   todayMonth = '0' + todayMonth;
+// }
+// let hour = myDate.getHours();
+// let minute = myDate.getMinutes();
 
-if (hour < 10) {
-  hour = '0' + hour;
-}
-if (minute < 10) {
-  minute = '0' + minute;
-}
+// if (hour < 10) {
+//   hour = '0' + hour;
+// }
+// if (minute < 10) {
+//   minute = '0' + minute;
+// }
 
 let dateHours = todayDate + '.' + todayMonth + '.' + myDate.getFullYear().toString().substr(-2) + ' ' + hour + ':' + minute;
 console.log(dateHours);
